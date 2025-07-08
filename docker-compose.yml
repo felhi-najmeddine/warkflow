@@ -1,0 +1,37 @@
+
+
+services:
+  backend:
+    build: .
+    container_name: backend-app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: najmedin
+      DB_PASS: najmedin
+      DB_NAME: workflow_db
+      JWT_SECRET: supersecretkey123
+      PORT: 3000
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: workflow_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: najmedin
+      MYSQL_PASSWORD: najmedin
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

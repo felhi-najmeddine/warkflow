@@ -321,7 +321,7 @@ Questo metodo permette di verificare che il sistema autentichi correttamente le 
 1. Clonare il repository:
 
 ```bash
-git clone https://github.com/tuo-username/semi-lavorati-workflow.git
+git clone https://github.com/felhi-najmeddine/warkflow
 cd semi-lavorati-workflow
 ```
 

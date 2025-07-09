@@ -354,7 +354,7 @@ Questo metodo permette di verificare che il sistema autentichi correttamente le 
 
 ```bash
 git clone https://github.com/felhi-najmeddine/warkflow
-cd semi-lavorati-workflow
+cd warkflow
 ```
 
 2. Creare il file `.env` con le variabili di ambiente necessarie

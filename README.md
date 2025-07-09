@@ -24,6 +24,41 @@ docker compose exec backend npm run create-user -- nejmedinUser nejmedinPass
 ---
 ## 📡 Descrizione API - Endpoints principali
 
+🔐 Login con Postman e Uso del Token JWT
+📌 Endpoint di Login
+POST http://localhost:3000/api/auth/login
+📤 Corpo della Richiesta (Body)
+Imposta il tipo di contenuto su raw e seleziona JSON, poi inserisci:
+{
+  "username": "nejmedinUser",
+  "password": "nejmedinPass"
+}
+✅ Risposta Attesa
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+---
+## 🧪 Test dei Percorsi Protetti con Postman
+
+Per testare un endpoint protetto da JWT usando Postman, segui questi passi:
+
+1. Apri Postman.
+
+2. Seleziona il metodo HTTP corretto (ad esempio **POST**) e inserisci l'URL dell'endpoint protetto, ad esempio `/api/ordini`.
+
+3. Vai alla scheda **Headers** e aggiungi una nuova chiave:
+
+   - **Key:** `Authorization`
+   - **Value:** `Bearer <token>`
+
+   Sostituisci `<token>` con il token JWT ottenuto dal login o dalla generazione token.
+
+   Esempio:Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+4. Vai alla scheda **Body** e inserisci i dati necessari per la richiesta (solitamente in formato JSON).
+
+5. Invia la richiesta e verifica la risposta.
+   
+---
 ### 📦 Semi-Lavorati
 
 | ⚙️ Metodo | 🌐 Endpoint                    | 📘 Descrizione IT                       | 📥 Input                                                     | 📤 Output                                                   |
@@ -291,26 +326,6 @@ Output:
 - La chiave segreta JWT è caricata da `.env`.
 - Middleware di autenticazione controlla la validità del token.
 
----
-## 🧪 Test dei Percorsi Protetti con Postman
-
-Per testare un endpoint protetto da JWT usando Postman, segui questi passi:
-
-1. Apri Postman.
-
-2. Seleziona il metodo HTTP corretto (ad esempio **POST**) e inserisci l'URL dell'endpoint protetto, ad esempio `/api/ordini`.
-
-3. Vai alla scheda **Headers** e aggiungi una nuova chiave:
-
-   - **Key:** `Authorization`
-   - **Value:** `Bearer <token>`
-
-   Sostituisci `<token>` con il token JWT ottenuto dal login o dalla generazione token.
-
-   Esempio:Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-4. Vai alla scheda **Body** e inserisci i dati necessari per la richiesta (solitamente in formato JSON).
-
-5. Invia la richiesta e verifica la risposta.
 
 ---
 

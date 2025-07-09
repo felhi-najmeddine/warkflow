@@ -24,19 +24,35 @@ docker compose exec backend npm run create-user -- nejmedinUser nejmedinPass
 ---
 ## 📡 Descrizione API - Endpoints principali
 
-🔐 Login con Postman e Uso del Token JWT
-📌 Endpoint di Login
+## 🔐 Login con Postman e Uso del Token JWT
+
+### 📌 Endpoint di Login
+
+```
 POST http://localhost:3000/api/auth/login
-📤 Corpo della Richiesta (Body)
-Imposta il tipo di contenuto su raw e seleziona JSON, poi inserisci:
+```
+
+### 📤 Corpo della Richiesta (Body)
+
+Imposta il tipo di contenuto su **raw** e seleziona **JSON**, poi inserisci:
+
+```json
 {
   "username": "nejmedinUser",
   "password": "nejmedinPass"
 }
-✅ Risposta Attesa
+```
+
+### ✅ Risposta Attesa
+
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
+```
+
+> ℹ️ **Nota**: Salva il token ricevuto per utilizzarlo come autorizzazione nei prossimi endpoint protetti (es. inserendolo nei **Headers** come `Authorization: Bearer <token>`).
+
 ---
 ## 🧪 Test dei Percorsi Protetti con Postman
 

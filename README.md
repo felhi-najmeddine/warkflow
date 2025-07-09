@@ -22,7 +22,6 @@ Per creare un utente manualmente da terminale, puoi eseguire il seguente script:
 docker compose exec backend npm run create-user -- nejmedinUser nejmedinPass
 
 ---
-## 📡 Descrizione API - Endpoints principali
 
 ## 🔐 Login con Postman e Uso del Token JWT
 
@@ -75,6 +74,8 @@ Per testare un endpoint protetto da JWT usando Postman, segui questi passi:
 5. Invia la richiesta e verifica la risposta.
    
 ---
+## 📡 Descrizione API - Endpoints principali
+
 ### 📦 Semi-Lavorati
 
 | ⚙️ Metodo | 🌐 Endpoint                    | 📘 Descrizione IT                       | 📥 Input                                                     | 📤 Output                                                   |
